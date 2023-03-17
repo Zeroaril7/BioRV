@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">BioRV</string>
+    <string name="skip">Skip</string>
+    <string name="next">Next</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_onboarding">Welcome on My Galeries</string>
+    <string name="description_onboarding">In this application you will see some of my photos</string>
+    <string name="title_onboarding_2">See My Photograph</string>
+    <string name="description_onboarding_2">See the results of my shots</string>
+    <string name="title_onboarding_3">Rate my photo</string>
+    <string name="description_onboarding_3">You can give me therate with follow my instagram @fakhrilainur</string>
 </resources>

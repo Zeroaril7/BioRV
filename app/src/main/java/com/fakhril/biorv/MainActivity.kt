@@ -1,5 +1,7 @@
 package com.fakhril.biorv
 
+import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.GridLayoutManager
@@ -11,6 +13,15 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        if (!onBoardingFinished()) {
+            val intent = Intent(this, OnBoarding::class.java)
+            startActivity(intent)
+            overridePendingTransition(androidx.appcompat.R.anim.abc_fade_in, androidx.appcompat.R.anim.abc_fade_out)
+            finish()
+        }
+
+
         setContentView(R.layout.activity_main)
         getSupportActionBar()?.hide()
 
@@ -32,5 +43,10 @@ class MainActivity : AppCompatActivity() {
         dataImage.add(Galeri(R.drawable.f6))
         dataImage.add(Galeri(R.drawable.f7))
         dataImage.add(Galeri(R.drawable.f8))
+    }
+
+    private fun onBoardingFinished(): Boolean {
+        val sharedPref = getSharedPreferences("onBoarding", Context.MODE_PRIVATE)
+        return sharedPref.getBoolean("Finished", false)
     }
 }
